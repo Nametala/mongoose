@@ -1,0 +1,24 @@
+@base = http://localhost:3000
+GET {{base}}/api/health
+
+###
+GET {{base}}/api/produtos
+
+###
+POST {{base}}/api/produtos
+Content-Type: application/json
+
+{"nome":"Cabo HDMI","preco":35,"categoria":"Acessórios","estoque":20}
+
+###
+# Troque pelo _id real de um produto (veja GET /api/produtos). precoUnitario é preenchido pelo servidor.
+POST {{base}}/api/vendas
+Content-Type: application/json
+
+{"cliente":"Arthur","itens":[{"produto":"COLE_O_ID_AQUI","quantidade":2}]}
+
+###
+GET {{base}}/api/vendas
+
+###
+GET {{base}}/api/relatorios/vendas
